@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    const data = {
+      apikey: 'r0vj5sdA',
+      objectType: 'animals',
+      objectAction: 'publicSearch',
+      search: {
+        resultStart: 0,
+        resultLimit: 2,
+        resultSort: 'animalID',
+        resultOrder: 'asc',
+        calcFoundRows: 'Yes',
+        filters: [
+          {
+            fieldName: 'animalStatus',
+            operation: 'equals',
+            criteria: 'Available'
+          },
+          {
+            fieldName: 'animalSpecies',
+            operation: 'equals',
+            criteria: 'dog'
+          },
+          {
+            fieldName: 'animalOrgID',
+            operation: 'equals',
+            criteria: '6562'
+          }
+        ],
+        fields: [
+          'animalID',
+          'animalStatus',
+          'animalOrgID',
+          'animalName',
+          'animalBreed',
+          'animalLocation',
+          'animalPictures'
+        ]
+      }
+    };
+    fetch('https://api.rescuegroups.org/http/v2.json', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+      .then(res => res.json())
+      .then(res => console.log(res.data))
+      .catch(error => console.log(error));
+  </script>
+</body>
+
+</html>
