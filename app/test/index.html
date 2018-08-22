@@ -12,7 +12,7 @@
 
   <script>
     const data = {
-      apikey: 'r0vj5sdA',
+      apikey: 'XWtDGSkY',
       objectType: 'animals',
       objectAction: 'publicSearch',
       search: {
@@ -22,16 +22,6 @@
         resultOrder: 'asc',
         calcFoundRows: 'Yes',
         filters: [
-          {
-            fieldName: 'animalStatus',
-            operation: 'equals',
-            criteria: 'Available'
-          },
-          {
-            fieldName: 'animalSpecies',
-            operation: 'equals',
-            criteria: 'dog'
-          },
           {
             fieldName: 'animalOrgID',
             operation: 'equals',
@@ -57,7 +47,7 @@
       body: JSON.stringify(data)
     })
       .then(res => res.json())
-      .then(res => console.log(res.data))
+      .then(res => console.log(res))
       .catch(error => console.log(error));
   </script>
 </body>
