@@ -23,6 +23,15 @@ module.exports = {
         test: /\.tsx?$/,
         loaders: ['babel-loader', 'awesome-typescript-loader'],
         include: path.resolve('src')
+      },
+      {
+        test: /\.css$/,
+        loader:
+          'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loader: 'file-loader?name=/src/images/[name].[ext]'
       }
     ]
   },

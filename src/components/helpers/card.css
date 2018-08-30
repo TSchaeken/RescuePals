@@ -1,0 +1,26 @@
+.container {
+  width: 300px;
+  height: 550px;
+  border: 1px solid black;
+  margin: 10px;
+  transition: 200ms;
+  background-color: white;
+  font-family: 'Indie Flower', cursive;
+  font-size: 4em;
+  cursor: url(../../images/pawCursor.png), auto;
+}
+
+.container:hover {
+  transform: scale(1.1);
+}
+
+.imageContainer {
+  width: 200px;
+  height: 300px;
+}
+
+.image {
+  width: 100%;
+  border-radius: 50px;
+  border: 2px solid brown
+}

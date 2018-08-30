@@ -1,18 +1,37 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { fetchPets, animalCard } from './helpers/index';
 
-export interface HelloProps {
-  compiler: string;
-  framework: string;
+const styles = require('./app.css');
+
+export interface AppState {
+  count?: number;
+  animalData?: any;
 }
 
-// 'HelloProps' describes the shape of props.
-// State is never set so we use the '{}' type.
-export default class Hello extends React.Component<HelloProps, {}> {
+export default class App extends Component<AppState> {
+  state: AppState = {
+    count: 1,
+    animalData: []
+  };
+
+  componentDidMount() {
+    fetchPets().then(res => {
+      this.setState({
+        animalData: res
+      });
+    });
+  }
+
   render() {
+    const { animalData } = this.state;
     return (
-      <h1>
-        Hello from {this.props.compiler} and {this.props.framework}!
-      </h1>
+      <div className={styles.contentContainer}>
+        {animalData ? (
+          animalData.map((animal: any[]) => animalCard(animal))
+        ) : (
+          <h1>They're coming!</h1>
+        )}
+      </div>
     );
   }
 }
