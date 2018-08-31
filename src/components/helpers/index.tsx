@@ -1,6 +1,3 @@
-import React from 'react';
-const styles = require('./card.css');
-
 export function fetchPets() {
   const data = {
     objectType: 'animals',
@@ -60,19 +57,4 @@ export function fetchPets() {
       })
     )
     .catch(error => console.log(error));
-}
-
-export function animalCard(data: any) {
-  console.log(data);
-  return (
-    <div key={data.animalName} className={styles.container}>
-      {data.animalName}
-      <div className={styles.imageContainer}>
-        <img
-          className={styles.image}
-          src={data.animalPictures[0].urlSecureFullsize}
-        />
-      </div>
-    </div>
-  );
 }

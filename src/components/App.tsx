@@ -1,37 +1,12 @@
-import React, { Component } from 'react';
-import { fetchPets, animalCard } from './helpers/index';
+import React from 'react';
+import CardContainer from './card_container/card.container';
 
-const styles = require('./app.css');
+const App = () => (
+  <div>
+    {/* <Navbar />
+    <Main /> */}
+    <CardContainer />
+  </div>
+);
 
-export interface AppState {
-  count?: number;
-  animalData?: any;
-}
-
-export default class App extends Component<AppState> {
-  state: AppState = {
-    count: 1,
-    animalData: []
-  };
-
-  componentDidMount() {
-    fetchPets().then(res => {
-      this.setState({
-        animalData: res
-      });
-    });
-  }
-
-  render() {
-    const { animalData } = this.state;
-    return (
-      <div className={styles.contentContainer}>
-        {animalData ? (
-          animalData.map((animal: any[]) => animalCard(animal))
-        ) : (
-          <h1>They're coming!</h1>
-        )}
-      </div>
-    );
-  }
-}
+export default App;
