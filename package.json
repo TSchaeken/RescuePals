@@ -56,7 +56,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
-    "start": "npm run build && node ./server.js"
+    "start": "node server.js",
+    "heroku-postbuild": "webpack -p"
   },
   "repository": {
     "type": "git",
