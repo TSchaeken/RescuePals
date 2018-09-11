@@ -23,11 +23,6 @@ export function fetchPets() {
           criteria: 'Dog'
         },
         {
-          fieldName: 'animalLocation',
-          opertaion: 'equals',
-          criteria: '85268'
-        },
-        {
           fieldName: 'animalOrgID',
           operation: 'equals',
           criteria: '6562'
