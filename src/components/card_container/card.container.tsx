@@ -1,16 +1,24 @@
 import React, { Component } from 'react';
-import { fetchPets } from '../helpers/index';
 import animalCard from '../animal_cards/animalcard';
 
 const styles = require('./card.container.css');
 
-export default class CardContainer extends Component {
+export interface CardContainerProps {
+  animalInfo?: [];
+}
+
+export default class CardContainer extends Component<CardContainerProps> {
+  constructor(props: CardContainerProps) {
+    super(props);
+  }
+
   render() {
-    const { animalinfo } = this.props;
+    console.log(this.props);
+    const { animalInfo } = this.props;
     return (
       <div className={styles.contentContainer}>
-        {animalinfo ? (
-          animalinfo.map((animal: any[]) => animalCard(animal))
+        {animalInfo ? (
+          animalInfo.map((animal: any[]) => animalCard(animal))
         ) : (
           <h1>They're coming!</h1>
         )}

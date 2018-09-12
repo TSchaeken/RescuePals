@@ -6,8 +6,12 @@ import Home from './home';
 import AnimalInfo from './animal_info';
 import { fetchPets } from './helpers';
 
-class App extends Component {
-  state = {
+interface AppState {
+  animalData?: [];
+}
+
+class App extends Component<AppState> {
+  state: AppState = {
     animalData: []
   };
 
@@ -29,7 +33,9 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route
             path="/adopt"
-            render={props => <CardContainer {...props} animalinfo={animalData} />}
+            render={props => (
+              <CardContainer {...props} animalInfo={animalData} />
+            )}
           />
           <Route path="/:name" component={AnimalInfo} />
         </Switch>
