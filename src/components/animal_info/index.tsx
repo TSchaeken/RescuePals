@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PictureContainer from '../animal_info_picture';
 
 const styles = require('./info.css');
 
@@ -45,14 +46,17 @@ class Info extends Component<InfoProps, InfoState> {
 
     if (animalData) {
       return (
-        <div className={styles['content-container']}>
-          <p>Hi, I'm {animalData.animalName}</p>
-          <p>`Color | {animalData.animalColor}`</p>
-          <p>`Breed | {animalData.animalBreed}`</p>
-          <img
-            src={animalData.animalPictures[0].urlSecureFullsize}
-            alt={`Picture of ${animalData.animalName}`}
-          />
+        <div className={styles['info-container']}>
+          <div>
+            <div className={styles['img-container']}>
+              <PictureContainer pictures={animalData.animalPictures} />
+            </div>
+          </div>
+          <div className={styles['content-container']}>
+            <p>Hi, I'm {animalData.animalName}</p>
+            <p>`Color | {animalData.animalColor}`</p>
+            <p>`Breed | {animalData.animalBreed}`</p>
+          </div>
         </div>
       );
     } else {
