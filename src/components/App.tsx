@@ -37,7 +37,10 @@ class App extends Component<AppState> {
               <CardContainer {...props} animalInfo={animalData} />
             )}
           />
-          <Route path="/:name" component={AnimalInfo} />
+          <Route
+            path="/:name"
+            render={props => <AnimalInfo {...props} animalInfo={animalData} />}
+          />
         </Switch>
       </div>
     );

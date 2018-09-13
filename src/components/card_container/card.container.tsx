@@ -13,7 +13,6 @@ export default class CardContainer extends Component<CardContainerProps> {
   }
 
   render() {
-    console.log(this.props);
     const { animalInfo } = this.props;
     return (
       <div className={styles.contentContainer}>
