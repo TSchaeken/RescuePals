@@ -45,6 +45,7 @@ class PictureContainer extends Component<
         <div className={styles['thumbnail-row']}>
           {pictures.map((item: any) => (
             <div
+              key={item.mediaID}
               className={styles['img-thumbnail-container']}
               onClick={() => this.changeOnClick(item.original.url)}
             >
