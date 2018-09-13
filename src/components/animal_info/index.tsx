@@ -47,10 +47,8 @@ class Info extends Component<InfoProps, InfoState> {
     if (animalData) {
       return (
         <div className={styles['info-container']}>
-          <div>
-            <div className={styles['img-container']}>
+          <div className={styles['picture-container']}>
               <PictureContainer pictures={animalData.animalPictures} />
-            </div>
           </div>
           <div className={styles['content-container']}>
             <p>Hi, I'm {animalData.animalName}</p>

@@ -1,22 +1,22 @@
 .content-container {
+  height: 800px;
+  width: 40%;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
   flex-direction: column;
   font-size: 2em;
-}
-
-.img-container {
-  height: 500px;
-  width: 500px;
-}
-
-.img {
-  height: 100%;
+  border: 1px solid black;
 }
 
 .info-container {
+  margin: auto;
   display: flex;
-  align-items: center;
   justify-content: center;
+  flex-direction: row;
+  width: 80%;
+  border: 1px solid red;
+}
+
+.picture-container {
+  width:60%;
 }
