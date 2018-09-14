@@ -6,6 +6,8 @@ import Home from './home';
 import AnimalInfo from './animal_info';
 import { fetchPets } from './helpers';
 
+const styles = require('./App.css');
+
 interface AppState {
   animalData?: [];
 }
@@ -28,20 +30,24 @@ class App extends Component<AppState> {
     const { animalData } = this.state;
     return (
       <div>
-        <Navbar />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route
-            path="/adopt"
-            render={props => (
-              <CardContainer {...props} animalInfo={animalData} />
-            )}
-          />
-          <Route
-            path="/:name"
-            render={props => <AnimalInfo {...props} animalInfo={animalData} />}
-          />
-        </Switch>
+        <Navbar/>
+        <div className={styles['main']}>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route
+              path="/adopt"
+              render={props => (
+                <CardContainer {...props} animalInfo={animalData} />
+              )}
+            />
+            <Route
+              path="/:name"
+              render={props => (
+                <AnimalInfo {...props} animalInfo={animalData} />
+              )}
+            />
+          </Switch>
+        </div>
       </div>
     );
   }

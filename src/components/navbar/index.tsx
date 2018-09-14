@@ -12,9 +12,13 @@ class Nav extends Component {
           <img src={Logo} className={styles['img']} />
         </div>
         <div className={styles['nav-button-container']}>
-          <Link to='/'><button className={styles['nav-button']}>Home</button></Link>
+          <Link to="/">
+            <button className={styles['nav-button']}>Home</button>
+          </Link>
+          <Link to="/adopt">
+            <button className={styles['nav-button']}>Adopt</button>
+          </Link>
           <button className={styles['nav-button']}>About</button>
-          <Link to='/adopt'><button className={styles['nav-button']}>Adopt</button></Link>
         </div>
       </div>
     );
