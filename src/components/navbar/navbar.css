@@ -3,16 +3,31 @@
   width: 80%;
   display: flex;
   align-items: center;
-  padding-bottom: 20px;
-  border-bottom: 3px solid #004990;
+  justify-content: space-between;
+  height: 100px;
 }
 
 .img-container {
+  position: relative;
+  top:50px;
   width: 200px;
+  z-index: 5;
 }
 
 .img {
   width: 100%;
+}
+
+.left-nav { 
+display: flex;
+justify-content: flex-start;
+align-items: center;
+}
+
+.right-nav {
+display: flex;
+justify-content: flex-end;
+align-items: center;
 }
 
 .nav-button-container {
@@ -23,14 +38,13 @@
 
 .nav-button {
   height: 50px;
-  margin-right: 10px;
+  margin-right: 20px;
   font-size: 2em;
   color: #004990;
   background: transparent;
   border: 2px solid #004990;
   border-radius: 6px;
   text-decoration: none;
-  text-transform: uppercase;
   transition-duration: 0.4s;
 }
 

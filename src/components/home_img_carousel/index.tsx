@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 
 const Jenny = require('../../images/scroll_jenny.jpg');
 
+const styles = require('./index.css')
+
+
 const PictureArray = [Jenny];
 
 class Carousel extends Component {
@@ -13,10 +16,9 @@ class Carousel extends Component {
   }
 
   render() {
-    const { active } = this.state;
     return (
-      <div>
-        <img src={PictureArray[0]} />
+      <div className={styles['img-container']}>
+        <img src={PictureArray[0]} className={styles['img-active']}/>
       </div>
     );
   }

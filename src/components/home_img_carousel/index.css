@@ -1,0 +1,15 @@
+.img-container {
+  border-top: 2px solid #004990;
+  border-bottom: 2px solid #004990;
+  height: 400px;
+  width:100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center ;
+}
+
+.img-active {
+  width: 100%;
+  margin-top: 200px;
+  flex: none;
+}
