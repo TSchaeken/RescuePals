@@ -5,7 +5,7 @@ export function fetchPets() {
       calcFoundRows: 'Yes',
       resultStart: 0,
       resultLimit: 25,
-      resultSort: 'animalOrgID',
+      resultSort: 'animalName',
       resultOrder: 'desc',
       fields: [
         'animalName',
@@ -14,7 +14,8 @@ export function fetchPets() {
         'animalPictures',
         'animalSex',
         'animalStatus',
-        'animalDescriptionPlain'
+        'animalDescriptionPlain',
+        'animalUpdatedDate'
       ],
       filters: [
         {
@@ -45,7 +46,9 @@ export function fetchPets() {
     },
     body: JSON.stringify(data)
   })
-    .then(res => res.json())
+    .then(res => {
+      return res.json();
+    })
     .then(res =>
       Object.keys(res.data).map(key => {
         return res.data[key];
