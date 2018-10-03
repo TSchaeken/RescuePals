@@ -5,7 +5,7 @@ export default class SimpleExample extends Component {
   state = {
     lat: 33.5927081,
     lng: -111.7087532,
-    zoom: 16
+    zoom: 17
   };
 
   render() {

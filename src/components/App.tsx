@@ -5,6 +5,7 @@ import Navbar from './navbar';
 import Home from './home';
 import AnimalInfo from './animal_info';
 import { fetchPets } from './helpers';
+import Footer from './footer';
 
 const styles = require('./App.css');
 
@@ -30,7 +31,9 @@ class App extends Component<AppState> {
     const { animalData } = this.state;
     return (
       <div>
-        <Navbar/>
+        <div className={styles['header']}>
+          <Navbar />
+        </div>
         <div className={styles['main']}>
           <Switch>
             <Route exact path="/" component={Home} />
@@ -47,6 +50,9 @@ class App extends Component<AppState> {
               )}
             />
           </Switch>
+        </div>
+        <div className={styles['footer']}>
+          <Footer />
         </div>
       </div>
     );

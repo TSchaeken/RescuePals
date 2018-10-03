@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Carousel from '../home_img_carousel';
-import SimpleExample from '../location_map';
+import Map from '../location_map';
 
 const styles = require('./home.css');
 
@@ -49,7 +49,9 @@ class Home extends Component {
             pharetra malesuada felis, eget sollicitudin dolor.
           </div>
         </div>
-        <SimpleExample />
+        <div className={styles['location-map']}>
+          <Map />
+        </div>
       </div>
     );
   }
