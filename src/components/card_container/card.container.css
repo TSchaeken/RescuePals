@@ -1,4 +1,5 @@
 .contentContainer {
+  padding-top: 100px;
   margin: auto;
   width: 80%;
   display: flex;

@@ -54,5 +54,21 @@ export function fetchPets() {
         return res.data[key];
       })
     )
+    .then(res => {
+      let sorted = res.sort(function(a: any, b: any) {
+        let c: any = new Date(a.animalUpdatedDate);
+        let d: any = new Date(b.animalUpdatedDate);
+        return d - c;
+      });
+      return sorted;
+    })
     .catch(error => console.log(error));
 }
+
+// export function sortPets(pets: any) {
+//   const sortedpets = pets.sort(function(a: any, b: any) {
+//     let c: any = new Date(a.animalUpdatedDate);
+//     let d: any = new Date(b.animalUpdatedDate);
+//     return d - c;
+//   });
+// }

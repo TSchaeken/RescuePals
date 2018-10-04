@@ -1,0 +1,9 @@
+.main {
+  width: 200px;
+}
+
+.animal-img {
+  border-radius: 10%;
+  border: 2px solid #004990;
+  width: 100%;
+}

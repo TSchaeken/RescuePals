@@ -36,7 +36,11 @@ class App extends Component<AppState> {
         </div>
         <div className={styles['main']}>
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route
+              exact
+              path="/"
+              render={props => <Home {...props} animalInfo={animalData} />}
+            />
             <Route
               path="/adopt"
               render={props => (
