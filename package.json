@@ -59,6 +59,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --mode development --open --hot",
+    "dev2":"webpack --mode development && nodemon server.js",
     "build": "webpack --mode production",
     "start": "node server.js",
     "heroku-postbuild": "webpack -p"
