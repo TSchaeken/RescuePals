@@ -1,5 +1,5 @@
 {
-  "extends": ["tslint:latest", "tslint-react", "tslint-prettier"],
+  "extends": ["tslint:latest", "tslint-react", "tslint-config-prettier"],
   "rules": {
     "arrow-parens": false,
     "arrow-return-shorthand": [false],
@@ -19,6 +19,7 @@
     "no-invalid-this": [true, "check-function-in-method"],
     "no-null-keyword": true,
     "no-require-imports": false,
+    "no-var-requires": false,
     "no-submodule-imports": [true, "@src", "rxjs"],
     "no-this-assignment": [true, { "allow-destructuring": true }],
     "no-trailing-whitespace": true,
